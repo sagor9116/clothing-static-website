@@ -6,3 +6,14 @@ Version 1
 5. [x] Get all external stylesheet and scripts for (favicon, google fonts, font awesome, animate.css, glide.css and glide.js).
 6. [x] Create a custom stylesheet.
 7. [x] link our custom stylesheet and scripts.
+
+Version 2
+1. [x] With the universal selector set some default style
+2. [x] In custom stylesheet create a root style to define our variable.
+3. [x] Set some default style for html, ul, a and others.
+4. [x] set up the container style and its media quaries.
+
+Version 3
+1. [x] Create the header element in html and put the navigation section under it.
+2. [x] style the entire section.
+3. [] Open up the index.js file and write some javascript to toggling navigation bar in the smaller screen.
