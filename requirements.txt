@@ -1,0 +1,8 @@
+Version 1 
+1. [x] Creating the html file and html5 boilerplate.
+2. [x] create an image and js folder.
+3. [x] store the banner images inside the images folder.
+4. [x] Inside the js folder create 3 js files(index.js, slider.js, product.js).
+5. [x] Get all external stylesheet and scripts for (favicon, google fonts, font awesome, animate.css, glide.css and glide.js).
+6. [x] Create a custom stylesheet.
+7. [x] link our custom stylesheet and scripts.
