@@ -16,4 +16,7 @@ Version 2
 Version 3
 1. [x] Create the header element in html and put the navigation section under it.
 2. [x] style the entire section.
-3. [] Open up the index.js file and write some javascript to toggling navigation bar in the smaller screen.
+3. [x] Open up the index.js file and write some javascript to toggling navigation bar in the smaller screen.
+
+Version 4
+1. [x] Create the hero section and use the glide.js for sliding image.

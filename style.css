@@ -10,11 +10,12 @@
 :root {
   --body-font: "Poppins", sans-serif;
   --secondar-font: "Merriweather", serif;
+  --main-heading-font: "Amiri", serif;
   --primary-color: #99173c;
   --white: #fff;
   --balck: #222;
   --grey: #444;
-  --light-white: #d1e2e9;
+  --light-white: #f3ecee;
   --yellow: #ffd800;
 }
 
@@ -61,12 +62,30 @@ img {
 
 .navigation {
   padding: 1.6rem 0;
+  background-color: #000;
 }
 
 .nav-center {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+/* fix-nav class will trigger with javascript */
+.fix-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1200;
+  background-color: var(--white);
+  color: #000;
+  box-shadow: 0 5px 15px rgba(255, 255,255, 0.6);
+}
+
+.logo {
+  color: var(--white);
+  letter-spacing: 2px;
 }
 
 .logo span {
@@ -95,7 +114,7 @@ img {
   display: inline-block;
   padding: 0.5rem 0 0.2rem;
   font-size: 1.5rem;
-  color: var(--balck);
+  color: var(--white);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-right: -1px;
@@ -134,6 +153,7 @@ img {
   padding: 0.3rem 0.7rem;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  
 }
 
 .nav-icons span:hover {
@@ -141,25 +161,161 @@ img {
 }
 
 .nav-icons i {
-  transition: all 0.3s ease-in-out;
-}
-
-.nav-icons span:hover i {
   color: var(--white);
+  transition: all 0.3s ease-in-out;
 }
 
 .hamburger {
   display: none;
 }
 
+/* ======================
+HERO STARTS HERE
+========================= */
+
+.hero,
+.glide__hero,
+.banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--light-white);
+}
+
+.banner-content {
+  position: absolute;
+  top: 50%;
+  transform: translate(25%, -50%);
+}
+
+.banner-content span {
+  display: inline-block;
+  font-size: 1.4rem;
+  color: var(--grey);
+  letter-spacing: 1px;
+  margin-right: -1px;
+  margin-bottom: 1rem;
+}
+
+.banner-content h1 {
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.banner-content h4 {
+  font-weight: 400;
+  color: var(--grey);
+  margin-bottom: 2rem;
+}
+
+.button-group button {
+  display: inline-block;
+  background-color: transparent;
+  border: 1px solid var(--balck);
+  outline: none;
+  padding: 1rem 3rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: all 0.5s ease-in-out;
+}
+
+.button-group button:first-child {
+  background-color: var(--balck);
+  color: var(--white);
+}
+
+.button-group button:first-child:hover {
+  background-color: var(--white);
+  color: var(--balck);
+}
+
+.button-group button:last-child:hover {
+  background-color: var(--balck);
+  color: var(--white);
+}
+.banner img {
+  position: absolute;
+  bottom: 0;
+}
+
+.banner img.banner-img-1 {
+  width: 85rem;
+  right: -5%;
+}
+.banner img.banner-img-2, 
+.banner img.banner-img-3 {
+  width: 100rem;
+  right: -10%;
+}
+
+/* glide pointers style */
+/* .glide__arrows {
+  top: 50%;
+} */
+
+.glide__arrow {
+  position: absolute;
+  top: 50%;
+  background-color: var(--primary-color);
+  outline: none;
+  border: none;
+  padding: 1.3rem 1.5rem;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  color: var(--white);
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+/* .glide__arrow:hover {
+  background-color: transparent;
+  color: #000;
+} */
+
+.glide:hover .glide__arrow {
+  visibility: visible;
+  opacity: 1;
+}
+
+.glide__arrow--left {
+  left: 3%;
+}
+
+.glide__arrow--right {
+  right: 3%;
+}
+
+/* ======================
+MEDIA QUARIES STARTS HERE
+========================= */
+
 /* MEDIA QUARIES FOR 1200PX*/
 @media only screen and (max-width: 1200px) {
   .container {
     padding: 0 3rem;
   }
+  /* hero section */
+  .hero,
+  .glide__hero,
+  .banner {
+  height: 90vh;
+}
+.banner img.banner-img-1 {
+  width: 60rem;
+}
+.banner img.banner-img-2, 
+.banner img.banner-img-3 {
+  width: 70rem;
+}
+
 }
 
 @media only screen and (max-width: 996px) {
+  /* header/navigation section */
   .nav-item:not(:last-child) {
     margin: 0.3rem;
   }
@@ -172,6 +328,30 @@ img {
   .nav-icons span {
     font-size: 1.2rem;
   }
+
+  /* hero section */
+  .hero,
+  .glide__hero,
+  .banner {
+  height: 60vh;
+}
+  .banner-content {
+    width: 60%;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .banner img.banner-img-1,
+  .banner img.banner-img-2 {
+    left: 50%;
+    width: 50rem;
+    transform: translateX(-50%);
+  }
+  .banner img.banner-img-3 {
+    left: 55%;
+    width: 50rem;
+    transform: translateX(-50%);
+  }
 }
 
 /* MEDIA QUARIES FOR 768PX*/
@@ -179,6 +359,7 @@ img {
   .container {
     padding: 0 5rem;
   }
+  /* header/navigation section */
   .nav-menu {
     position: fixed;
     top: 0;
@@ -244,5 +425,36 @@ img {
     display: block;
     font-size: 2.5rem;
     cursor: pointer;
+    color: var(--white);
   }
+
+  /* hero section */
+  .banner-content {
+    width: 90%;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 567px) {
+  /* hero section */
+  .hero,
+  .glide__hero,
+  .banner {
+  height: 95vh;
+}
+  .banner-content h1 {
+    font-size: 3rem;
+  }
+
+  .banner-content h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .button-group button  {
+    padding: 1rem 2.5rem;
+    font-size: 1.5rem;
+    margin: 1rem;
+  }
+
 }

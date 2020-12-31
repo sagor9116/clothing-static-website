@@ -1,3 +1,4 @@
+// navigation menu for smaller screen
 const navMenu = document.querySelector('.nav-menu');
 const navigation = document.querySelector('.navigation');
 const openBtn = document.querySelector('.hamburger');
@@ -19,3 +20,15 @@ closeBtn.addEventListener('click', () => {
         document.body.classList.remove('show');
     }
 });
+
+// fix-nav
+const navBar = document.querySelector('.navigation');
+const navHeight = navBar.getBoundingClientRect().height;
+window.addEventListener('scroll', () => {
+    const scrollHeight = window.pageYOffset;
+    if(scrollHeight > navHeight) {
+        navBar.classList.add('fix-nav')
+    } else {
+        navBar.classList.remove('fix-nav')
+    }
+})
